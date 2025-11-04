@@ -1,0 +1,213 @@
+/* 🌊 Modern Task Tracker – Elegant & Minimal with Subtle Animations */
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Background with subtle gradient */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #5eead4, #0f766e);
+  color: #1e293b;
+}
+
+/* App container */
+.App {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Header section */
+header {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #0f766e;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+header p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 15px;
+}
+
+/* Form layout */
+.task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+/* Input box */
+#inp {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 8px 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+#inp:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#inp input {
+  flex: 1;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: #0f172a;
+}
+
+/* Add task button */
+#inp button {
+  border: none;
+  background: linear-gradient(90deg, #0d9488, #14b8a6);
+  color: #ffffff;
+  padding: 9px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#inp button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #0f766e, #0d9488);
+}
+
+/* Dropdowns */
+#btns {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#btns select {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 14px;
+  transition: border 0.2s ease-in-out;
+}
+
+#btns select:focus {
+  border-color: #0d9488;
+  outline: none;
+}
+
+/* Task list */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.task-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* ✅ Completed task animation restored */
+.task-list li.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+  transform: translateX(15px); /* Slide right */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Task list buttons */
+.task-list button {
+  background: none;
+  border: 0;
+  color: #0f766e;
+  cursor: pointer;
+  padding: 6px 8px;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.task-list button:hover {
+  color: #ffffff;
+  background: #0f766e;
+}
+
+/* Progress bar */
+.progress-tracker {
+  margin-top: 20px;
+}
+
+.progress-bar {
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #0d9488, #14b8a6);
+  transition: width 0.4s ease;
+}
+
+/* Clear all button */
+.clear-btn {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  background: #ef4444;
+  color: #ffffff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.clear-btn:hover {
+  background: #b91c1c;
+  transform: scale(1.02);
+}
+
+/* 🔥 Animation for app load */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
